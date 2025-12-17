@@ -60,20 +60,30 @@ export function SocialProof() {
 
             {/* Right column - Logo Grid */}
             <div className="lg:col-span-7 relative">
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-px bg-gray-700/20">
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-px bg-gray-800/30">
                 {companies.map((company, index) => (
                   <div
                     key={company.name}
-                    className="bg-black p-16 sm:p-24 md:p-32 flex items-center justify-center hover:bg-gray-900/30 transition-colors duration-200 group min-h-[300px]"
+                    className="bg-black p-16 sm:p-24 md:p-32 flex items-center justify-center hover:bg-gray-900/50 transition-colors duration-150 group min-h-[300px] relative"
                   >
+                    {/* Technical annotations */}
+                    <div className="absolute top-2 right-3 flex flex-col items-end gap-1 text-[8px] text-gray-800 opacity-20 select-none">
+                      <MemoryAddress />
+                      <BinaryString length={6} />
+                    </div>
+                    
+                    <div className="absolute bottom-2 left-3 text-[8px] text-gray-800 opacity-0 group-hover:opacity-30 transition-opacity">
+                      <SystemMessage />
+                    </div>
+                    
                     {company.logo ? (
                       <img 
                         src={company.logo} 
                         alt={company.name}
-                        className="w-full max-w-[280px] h-auto object-contain opacity-70 hover:opacity-100 transition-opacity duration-200"
+                        className="w-full max-w-[280px] h-auto object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-150"
                       />
                     ) : (
-                      <div className="text-sm text-gray-600 hover:text-gray-400 transition-colors">
+                      <div className="text-sm text-gray-600 group-hover:text-gray-400 transition-colors">
                         {company.name}
                       </div>
                     )}

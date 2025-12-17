@@ -15,6 +15,18 @@ export function Header() {
   }, []);
 
   return (
+    <>
+    {/* Shadow overlay positioned below header - sits behind header content */}
+    <div 
+      className="fixed left-0 right-0 pointer-events-none"
+      style={{
+        top: '70px',
+        height: '120px',
+        background: 'linear-gradient(to bottom, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.8) 30%, rgba(0, 0, 0, 0.5) 60%, transparent 100%)',
+        zIndex: 40
+      }}
+    />
+    
     <header className="fixed top-0 left-0 right-0 bg-black z-50">
       <div className="container mx-auto px-6 sm:px-8 lg:px-12 py-6">
         <div className="max-w-7xl mx-auto">
@@ -103,5 +115,6 @@ export function Header() {
         </div>
       </div>
     </header>
+    </>
   );
 }
