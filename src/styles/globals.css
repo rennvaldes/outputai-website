@@ -1,0 +1,167 @@
+@import "tailwindcss";
+
+@layer base {
+  /* Minimal Technical Aesthetic Variables */
+  :root {
+    --tech-gray: #999999;
+    --tech-gray-bright: #cccccc;
+    --tech-gray-dim: #666666;
+    --tech-gray-darker: #333333;
+  }
+
+  * {
+    @apply border-gray-500;
+  }
+
+  body {
+    @apply bg-black text-gray-400 antialiased;
+    font-family: 'Iosevka Term', 'Iosevka', monospace;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    line-height: 1.1;
+    font-weight: 400;
+  }
+
+  h2 {
+    font-size: 1.75rem;
+    line-height: 1.2;
+    font-weight: 400;
+  }
+
+  h3 {
+    font-size: 1.125rem;
+    line-height: 1.4;
+    font-weight: 400;
+  }
+
+  p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    font-weight: 400;
+  }
+
+  code {
+    @apply bg-black;
+    font-family: 'Iosevka Term', 'Iosevka', monospace;
+  }
+
+  pre {
+    @apply bg-black overflow-x-auto;
+    font-family: 'Iosevka Term', 'Iosevka', monospace;
+  }
+}
+
+/* Minimal scanlines */
+.scanlines {
+  background: linear-gradient(
+    to bottom,
+    transparent 50%,
+    rgba(255, 255, 255, 0.03) 51%
+  );
+  background-size: 100% 4px;
+}
+
+/* CRT flicker effect */
+.crt-flicker {
+  background: rgba(255, 255, 255, 0.02);
+  animation: flicker 0.2s infinite;
+}
+
+@keyframes flicker {
+  0% {
+    opacity: 0.5;
+  }
+  10% {
+    opacity: 0.55;
+  }
+  20% {
+    opacity: 0.48;
+  }
+  30% {
+    opacity: 0.65;
+  }
+  40% {
+    opacity: 0.52;
+  }
+  50% {
+    opacity: 0.6;
+  }
+  60% {
+    opacity: 0.58;
+  }
+  70% {
+    opacity: 0.53;
+  }
+  80% {
+    opacity: 0.62;
+  }
+  90% {
+    opacity: 0.57;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+
+/* Subtle CRT glow effect */
+.text-glow {
+  text-shadow: 
+    0 0 2px rgba(200, 200, 200, 0.5),
+    0 0 4px rgba(200, 200, 200, 0.3);
+}
+
+.text-glow-subtle {
+  text-shadow: 
+    0 0 2px rgba(200, 200, 200, 0.3),
+    0 0 3px rgba(200, 200, 200, 0.2);
+}
+
+/* Terminal cursor blink */
+.cursor-blink::after {
+  content: '█';
+  animation: blink 1s step-end infinite;
+  margin-left: 2px;
+}
+
+.cursor-blink-svg {
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  0%, 50% {
+    opacity: 1;
+  }
+  51%, 100% {
+    opacity: 0;
+  }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Button styles */
+.dos-button {
+  @apply border border-gray-500 bg-black text-gray-400 px-6 py-3 text-sm;
+  @apply hover:bg-gray-800 hover:text-gray-200 transition-all duration-150;
+}
+
+/* Link styles */
+a {
+  @apply text-gray-400 hover:text-gray-300 transition-colors duration-150;
+  text-decoration: none;
+}
+
+/* Selection */
+::selection {
+  @apply bg-gray-700 text-white;
+}
+
+/* Crosshair lines */
+.crosshair-line {
+  @apply bg-gray-700;
+  opacity: 0.3;
+}
