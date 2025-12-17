@@ -8,19 +8,19 @@ import { StreamingSection } from './StreamingSection';
 export function GettingStarted() {
   const cards = [
     {
-      label: 'Learning',
+      label: 'Learn',
       title: 'Read the guides',
       description: 'Learn what the framework can do and how the pieces fit together.',
       link: '#docs',
     },
     {
-      label: 'Contributing',
+      label: 'Contribute',
       title: 'Contribute on GitHub',
       description: 'File bug reports and make pull-requests.',
       link: '#github',
     },
     {
-      label: 'Keeping up',
+      label: 'Keep Up',
       title: "See what's new",
       description: 'The latest releases and updates on development.',
       link: '#updates',
