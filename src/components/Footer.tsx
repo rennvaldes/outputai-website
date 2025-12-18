@@ -5,8 +5,8 @@ import { BinaryString } from './BinaryString';
 
 export function Footer() {
   return (
-    <footer className="py-16 sm:py-20">
-      <div className="container mx-auto px-6 sm:px-8 lg:px-12">
+    <footer className="py-16 sm:py-20 overflow-x-hidden w-full max-w-full">
+      <div className="container mx-auto px-6 sm:px-8 lg:px-12 overflow-x-hidden">
         <div className="max-w-7xl mx-auto">
           {/* 44px top border */}
           <div className="w-[88px] h-px bg-gray-700/30 mb-16 sm:mb-20"></div>

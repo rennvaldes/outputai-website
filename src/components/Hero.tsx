@@ -9,8 +9,8 @@ import { StreamingSection } from './StreamingSection';
 
 export function Hero() {
   return (
-    <section className="container mx-auto px-6 sm:px-8 lg:px-12 py-24 sm:py-32 lg:py-40">
-      <div className="max-w-7xl mx-auto">
+    <section className="container mx-auto px-6 sm:px-8 lg:px-12 py-24 sm:py-32 lg:py-40 overflow-x-hidden">
+      <div className="max-w-7xl mx-auto overflow-x-hidden">
         <StreamingSection delay={100}>
           <div className="mb-16">
             {/* Hidden metadata easter egg */}

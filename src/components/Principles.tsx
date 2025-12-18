@@ -36,8 +36,8 @@ export function Principles() {
   ];
 
   return (
-    <section className="py-24 sm:py-32">
-      <div className="container mx-auto px-6 sm:px-8 lg:px-12">
+    <section className="py-24 sm:py-32 overflow-x-hidden w-full max-w-full">
+      <div className="container mx-auto px-6 sm:px-8 lg:px-12 overflow-x-hidden">
         <div className="max-w-7xl mx-auto">
           {/* 44px top border */}
           <div className="w-[88px] h-px bg-gray-700/20 mb-24 sm:mb-32"></div>

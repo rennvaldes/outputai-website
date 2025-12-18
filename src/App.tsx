@@ -16,17 +16,17 @@ import { GlitchText } from './components/GlitchText';
 function VsHeading({ items }: { items: string[] }) {
   const [mainItem, ...subItems] = items;
   return (
-    <div className="text-lg font-light text-gray-300 flex items-start gap-2">
+    <div className="text-lg font-light text-gray-300 flex items-start gap-2 overflow-hidden">
       <div className="flex items-start gap-2 flex-shrink-0">
-        <span className="inline-block flex-shrink-0 mt-1" style={{ width: '72.36px', minWidth: '72.36px', height: '21.6px', '--fill-0': 'rgb(209, 213, 219)' } as React.CSSProperties}>
+        <span className="inline-block flex-shrink-0 mt-1" style={{ width: '72.36px', minWidth: '72.36px', maxWidth: '72.36px', height: '21.6px', '--fill-0': 'rgb(209, 213, 219)' } as React.CSSProperties}>
           <Group1000004197 hideUnderscore={false} />
         </span>
-        <span className="leading-tight">vs</span>
+        <span className="leading-tight flex-shrink-0">vs</span>
       </div>
-      <div className="leading-tight flex-1">
-        <div>{mainItem}</div>
+      <div className="leading-tight flex-1 min-w-0">
+        <div className="break-words">{mainItem}</div>
         {subItems.map((item, index) => (
-          <div key={index}>{item}</div>
+          <div key={index} className="break-words">{item}</div>
         ))}
       </div>
     </div>
@@ -35,15 +35,15 @@ function VsHeading({ items }: { items: string[] }) {
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-black text-gray-400 font-mono relative">
+    <div className="min-h-screen bg-black text-gray-400 font-mono relative overflow-x-hidden max-w-full">
       {/* CRT scanline effect */}
-      <div className="fixed inset-0 pointer-events-none z-50 scanlines opacity-30"></div>
+      <div className="fixed inset-0 pointer-events-none z-50 scanlines opacity-30 max-w-full"></div>
       
       {/* CRT flicker overlay */}
-      <div className="fixed inset-0 pointer-events-none z-50 crt-flicker opacity-10"></div>
+      <div className="fixed inset-0 pointer-events-none z-50 crt-flicker opacity-10 max-w-full"></div>
       
       <Header />
-      <main className="pt-[73px]">
+      <main className="pt-[73px] overflow-x-hidden">
         <Hero />
         <SocialProof />
         <Features />
@@ -51,9 +51,9 @@ export default function App() {
         <VideoExamples />
         
         {/* Comparisons Section */}
-        <section className="py-24 sm:py-32">
+        <section className="py-24 sm:py-32 overflow-x-hidden">
           <div className="container mx-auto px-6 sm:px-8 lg:px-12">
-            <div className="max-w-7xl mx-auto">
+            <div className="max-w-7xl mx-auto overflow-x-hidden">
               {/* 44px top border */}
               <div className="w-[88px] h-px bg-gray-700/20 mb-24 sm:mb-32"></div>
               
@@ -71,8 +71,8 @@ export default function App() {
                 </div>
               </div>
             
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-px bg-gray-800/30" style={{ gridAutoRows: 'auto 1fr' }}>
-            <div className="bg-black p-8 sm:p-10 relative group" style={{ display: 'grid', gridTemplateRows: '188px 1fr', gap: '2rem' }}>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-px bg-gray-800/30 overflow-hidden" style={{ gridAutoRows: 'auto 1fr' }}>
+            <div className="bg-black p-8 sm:p-10 relative group overflow-hidden" style={{ display: 'grid', gridTemplateRows: 'auto 1fr', gap: '2rem' }}>
               {/* Technical annotations */}
               <div className="absolute top-2 right-3 flex flex-col items-end gap-1 text-[8px] text-gray-800 opacity-20 select-none">
                 <MemoryAddress />
@@ -84,7 +84,7 @@ export default function App() {
               </div>
               
               <VsHeading items={['Langchain']} />
-              <p className="text-sm text-gray-500 leading-relaxed">
+              <p className="text-sm text-gray-500 leading-relaxed break-words">
                 Class hierarchies, abstract base classes, endless configuration options—it's a PhD thesis disguised as a framework. <span className="yuck-hover inline-block relative cursor-pointer" data-yuck="true">Yuck.</span>
               </p>
               <style>{`
@@ -192,7 +192,7 @@ export default function App() {
               `}} />
             </div>
             
-            <div className="bg-black p-8 sm:p-10 relative group" style={{ display: 'grid', gridTemplateRows: '188px 1fr', gap: '2rem' }}>
+            <div className="bg-black p-8 sm:p-10 relative group overflow-hidden" style={{ display: 'grid', gridTemplateRows: 'auto 1fr', gap: '2rem' }}>
               {/* Technical annotations */}
               <div className="absolute top-2 right-3 flex flex-col items-end gap-1 text-[8px] text-gray-800 opacity-20 select-none">
                 <MemoryAddress />
@@ -204,12 +204,12 @@ export default function App() {
               </div>
               
               <VsHeading items={['Visual Builders', 'n8n', 'Flowise', 'Langflow', 'AirOps']} />
-              <p className="text-sm text-gray-500 leading-relaxed">
+              <p className="text-sm text-gray-500 leading-relaxed break-words">
                 LLMs taught everyone to write complex code. Visual builders are condescending toys built for a world that no longer exists. Output is a real framework anyone can use—because AI writes most of the code.
               </p>
             </div>
             
-            <div className="bg-black p-8 sm:p-10 relative group" style={{ display: 'grid', gridTemplateRows: '188px 1fr', gap: '2rem' }}>
+            <div className="bg-black p-8 sm:p-10 relative group overflow-hidden" style={{ display: 'grid', gridTemplateRows: 'auto 1fr', gap: '2rem' }}>
               {/* Technical annotations */}
               <div className="absolute top-2 right-3 flex flex-col items-end gap-1 text-[8px] text-gray-800 opacity-20 select-none">
                 <MemoryAddress />
@@ -221,8 +221,8 @@ export default function App() {
               </div>
               
               <VsHeading items={['Other Frameworks', 'Mastra', 'LangGraph', 'LlamaIndex']} />
-              <p className="text-sm text-gray-500 leading-relaxed">
-                Every AI framework tries to reinvent the entire stack—including orchestration. Orchestration at scale is a hard, solved problem. We didn't reinvent it. We embraced <a href="https://temporal.io/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white underline">Temporal</a>, the open-source infra powering Replit, OpenAI Codex, Netflix, Stripe, Snap and more. Durable execution, automatic retries, and production-grade reliability—battle-tested.
+              <p className="text-sm text-gray-500 leading-relaxed break-words">
+                Every AI framework tries to reinvent the entire stack—including orchestration. Orchestration at scale is a hard, solved problem. We didn't reinvent it. We embraced <a href="https://temporal.io/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white underline break-words">Temporal</a>, the open-source infra powering Replit, OpenAI Codex, Netflix, Stripe, Snap and more. Durable execution, automatic retries, and production-grade reliability—battle-tested.
               </p>
             </div>
             </div>
